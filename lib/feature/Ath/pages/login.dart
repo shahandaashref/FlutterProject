@@ -58,45 +58,45 @@ class _LoginState extends State<Login> {
                 
                     //====Sign in Button====//
                   Bottoms(text: "Login", onPressed: () async {
-                //     if(formkey.currentState!.validate()){
-                //     try {
-                // final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-                //   email: emailAddress.text,
-                //   password: password.text,
-                // );
-                // Navigator.of(context).pushReplacementNamed("home");
+                    if(formkey.currentState!.validate()){
+                    try {
+                final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+                  email: emailAddress.text,
+                  password: password.text,
+                );
+                Navigator.of(context).pushReplacementNamed("home");
                         
-                //         } on FirebaseAuthException catch (e) {
-                // if (e.code == 'user-not-found') {
-                //   print('No user found for that email.');
-                //   AwesomeDialog(
-                //     context: context,
-                //     dialogType: DialogType.error,
-                //     animType: AnimType.rightSlide,
-                //     title: 'Error',
-                //     desc: 'No user found for that email.',
-                //     ).show();
+                        } on FirebaseAuthException catch (e) {
+                if (e.code == 'user-not-found') {
+                  print('No user found for that email.');
+                  AwesomeDialog(
+                    context: context,
+                    dialogType: DialogType.error,
+                    animType: AnimType.rightSlide,
+                    title: 'Error',
+                    desc: 'No user found for that email.',
+                    ).show();
                 
-                // } else if (e.code == 'wrong-password') {
-                //   print('Wrong password provided for that user.');
-                // AwesomeDialog(
-                //     context: context,
-                //     dialogType: DialogType.error,
-                //     animType: AnimType.rightSlide,
-                //     title: 'Error',
-                //     desc: 'Wrong password provided for that user.',
-                //     ).show();
-                // }
-                //         }
-                //       }else{
-                //     AwesomeDialog(
-                //     context: context,
-                //     dialogType: DialogType.error,
-                //     animType: AnimType.rightSlide,
-                //     title: 'Error',
-                //     desc: 'Please Enter your email and try again.',
-                //     ).show();
-                //       }
+                } else if (e.code == 'wrong-password') {
+                  print('Wrong password provided for that user.');
+                AwesomeDialog(
+                    context: context,
+                    dialogType: DialogType.error,
+                    animType: AnimType.rightSlide,
+                    title: 'Error',
+                    desc: 'Wrong password provided for that user.',
+                    ).show();
+                }
+                        }
+                      }else{
+                    AwesomeDialog(
+                    context: context,
+                    dialogType: DialogType.error,
+                    animType: AnimType.rightSlide,
+                    title: 'Error',
+                    desc: 'Please Enter your email and try again.',
+                    ).show();
+                      }
                 
                   }),
                         

@@ -46,36 +46,36 @@ class _RegisterState extends State<Register> {
         
         
               Bottoms(text: "Register", onPressed: ()async{
-        //         try {
-        //   final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        //     email: emailAddress.text,
-        //     password: password.text,
-        //   );
-        //   Navigator.of(context).pushReplacementNamed("home");
-        // } on FirebaseAuthException catch (e) {
-        //   if (e.code == 'weak-password') {
-        //     print('The password provided is too weak.');
-        //     AwesomeDialog(
-        //       context: context,
-        //       dialogType: DialogType.error,
-        //       animType: AnimType.rightSlide,
-        //       title: 'Error',
-        //       desc: 'The password provided is too weak.',
-        //       ).show();
-        //   } else if (e.code == 'email-already-in-use') {
-        //     print('The account already exists for that email.');
-        //     AwesomeDialog(
-        //       context: context,
-        //       dialogType: DialogType.error,
-        //       animType: AnimType.rightSlide,
-        //       title: 'Error',
-        //       desc: 'The account already exists for that email.',
-        //       ).show();
-        //   }
-        // } catch (e) {
-        //   print(e);
-        // }
-        //       }
+                try {
+          final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+            email: emailAddress.text,
+            password: password.text,
+          );
+          Navigator.of(context).pushReplacementNamed("verify");
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'weak-password') {
+            print('The password provided is too weak.');
+            AwesomeDialog(
+              context: context,
+              dialogType: DialogType.error,
+              animType: AnimType.rightSlide,
+              title: 'Error',
+              desc: 'The password provided is too weak.',
+              ).show();
+          } else if (e.code == 'email-already-in-use') {
+            print('The account already exists for that email.');
+            AwesomeDialog(
+              context: context,
+              dialogType: DialogType.error,
+              animType: AnimType.rightSlide,
+              title: 'Error',
+              desc: 'The account already exists for that email.',
+              ).show();
+          }
+        } catch (e) {
+          print(e);
+        }
+              
   }),
         
         
